@@ -28,7 +28,6 @@ module Devise
       raise "Can not invoke setup twice" if @@setup_done
       yield self
       @@setup_done = true
-      devise :twitterable_oauth
       Devise.warden do |manager|
         manager.oauth(:twitterable) do |twitter|
           twitter.consumer_key  = @@consumer_key
